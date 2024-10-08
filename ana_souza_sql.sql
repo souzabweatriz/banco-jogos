@@ -38,3 +38,6 @@ INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Doors', 2021, 'Sobrevivência', 'LSPLAHS', TRUE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Capybara Limpeza Tycoon', 2024, 'Simulação', 'Dynabyte Studios', TRUE )
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Bar do Bira', 2024, 'Simulação', 'ReyReno777', TRUE)
+
+
+*teste*
