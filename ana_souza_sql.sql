@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Roblox', 2006, 'Jogo de simulação', 'Roblox Corporation ', TRUE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Silent Hill', 1999, 'Survival Horror', 'Konami, Team silent',TRUE )
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Five nights at Freddy', 2014 , 'Survivor Horror', 'Scott Cawthon', TRUE)
