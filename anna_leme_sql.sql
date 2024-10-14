@@ -73,3 +73,17 @@ UPDATE Jogos SET data_lancamento_atraso = TRUE WHERE ano_publicacao < YEAR(CURDA
 UPDATE Jogos SET descricao=NULL WHERE descricao='Informação errada';
 UPDATE Jogos SET plataformas_adicionais='PC' WHERE multi_plataforma=TRUE
 UPDATE Jogos SET estado_desenvolvimento='Completo' WHERE estado_desenvolvimento='Em andamento';
+
+
+DELETE FROM jogos WHERE nome = 'Payday';
+DELETE FROM jogos WHERE desenvolvedor = 'Overkill Software';
+DELETE FROM jogos WHERE ano_publicacao < 2010;
+DELETE FROM jogos WHERE genero LIKE '%Ação%' AND multi_plataforma=FALSE;
+DELETE FROM jogos WHERE descricao IS NULL;
+DELETE FROM jogos WHERE plataforma NOT IN ('PC', 'Xbox', 'PlayStation');
+DELETE FROM jogos WHERE suporte_atual=FALSE;
+DELETE FROM jogos WHERE nome = 'Phasmophobia' AND ano_publicacao = 2020;
+DELETE FROM jogos WHERE genero = 'Ação' AND ano_publicacao > 2010;
+DELETE FROM jogos WHERE desenvolvedor = 'Overkill Software' AND multi_plataforma = FALSE;
+DELETE FROM jogos WHERE ano_publicacao BETWEEN 2010 AND 2015;
+DELETE FROM jogos WHERE ano_publicacao IS NULL;
