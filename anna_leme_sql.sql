@@ -40,7 +40,7 @@ INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('ARK: Survival Evolved' , 2015, 'Sobrevivência/Sandbox' ,  'Studio Wildcard' , 'Multi-plataforma', TRUE)
 
 
-SELECT  FROM jogos WHERE genero = ‘Aventura’ ORDER BY preco ASC;
+SELECT  FROM jogos WHERE genero = 'Aventura' ORDER BY preco ASC;
 SELECT * FROM jogos WHERE nome LIKE 'A%';
 SELECT * FROM jogos WHERE ano_publicacao BETWEEN 2010 AND 2020;
 SELECT * FROM jogos WHERE desenvolvedor = 'Overkill Software';
