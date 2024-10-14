@@ -38,3 +38,17 @@ INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Crusader Kings III' , 2020, 'RPG/Estratégia' ,  'Paradox Interactive'  , 'Multi-plataforma', TRUE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('EVE Online'  'MMORPG/Espaço', 2003, 'CCP Games',  'Multi-plataforma', TRUE )
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('ARK: Survival Evolved' , 2015, 'Sobrevivência/Sandbox' ,  'Studio Wildcard' , 'Multi-plataforma', TRUE)
+
+
+SELECT  FROM jogos WHERE genero = ‘Aventura’ ORDER BY preco ASC;
+SELECT * FROM jogos WHERE nome LIKE 'A%';
+SELECT * FROM jogos WHERE ano_publicacao BETWEEN 2010 AND 2020;
+SELECT * FROM jogos WHERE desenvolvedor = 'Overkill Software';
+SELECT * FROM jogos WHERE multi_plataforma = 'Sim';
+SELECT * FROM jogos ORDER BY nome ASC;
+SELECT * FROM jogos WHERE ano_publicacao > 2010 AND genero = 'RPG';
+SELECT desenvolvedor, ano_publicacao FROM jogos ORDER BY ano_publicacao ASC;
+SELECT * FROM jogos ORDER BY ano_publicacao ASC LIMIT 3;
+SELECT * FROM jogos ORDER BY classificacao DESC;
+SELECT nome, desenvolvedor FROM jogos ORDER BY desenvolvedor;
+SELECT * FROM jogos WHERE LENGTH(nome) = 6;
