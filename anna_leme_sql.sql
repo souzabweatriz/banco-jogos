@@ -87,3 +87,35 @@ DELETE FROM jogos WHERE genero = 'Ação' AND ano_publicacao > 2010;
 DELETE FROM jogos WHERE desenvolvedor = 'Overkill Software' AND multi_plataforma = FALSE;
 DELETE FROM jogos WHERE ano_publicacao BETWEEN 2010 AND 2015;
 DELETE FROM jogos WHERE ano_publicacao IS NULL;
+
+
+SELECT COUNT(*) AS total_jogos FROM jogos;
+SELECT AVG(ano_publicacao) AS media_ano_publicacao FROM jogos;
+SELECT MAX(ano_publicacao) AS ano_mais_recente FROM jogos;
+SELECT MIN(ano_publicacao) AS ano_mais_antigo FROM jogos;
+SELECT SUM(ano_publicacao) AS soma_anos_publicacao FROM jogos;
+SELECT CONCAT(nome, ' - ', desenvolvedor) AS jogo_desenvolvedor FROM jogos;
+SELECT SUBSTRING(nome, 1, 5) AS primeiro_caractere FROM jogos;
+SELECT SUM(ano_publicacao) AS soma_anos_multi_plataforma 
+FROM jogos 
+WHERE multi_plataforma = TRUE;
+SELECT DISTINCT genero FROM jogos;
+SELECT desenvolvedor, GROUP_CONCAT(nome) AS jogos 
+FROM jogos 
+GROUP BY desenvolvedor 
+HAVING COUNT(DISTINCT nome) > 1;
+SELECT genero, 
+MAX(classificacao) - MIN(classificacao) AS diferenca_classificacao 
+FROM jogos 
+GROUP BY genero;
+SELECT genero, 
+COUNT(*) * 100.0 / (SELECT COUNT(*) FROM jogos) AS porcentagem_jogos 
+FROM jogos 
+GROUP BY genero;
+
+
+
+
+
+
+
