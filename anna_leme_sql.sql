@@ -52,3 +52,24 @@ SELECT * FROM jogos ORDER BY ano_publicacao ASC LIMIT 3;
 SELECT * FROM jogos ORDER BY classificacao DESC;
 SELECT nome, desenvolvedor FROM jogos ORDER BY desenvolvedor;
 SELECT * FROM jogos WHERE LENGTH(nome) = 6;
+
+UPDATE jogos SET genero = 'Ação' WHERE nome = 'Phasmophobia';
+UPDATE jogos SET multi_plataforma = TRUE WHERE nome = 'Dig Dug';
+UPDATE jogos SET ano_publicacao = 2021 WHERE nome = 'BitLife';
+UPDATE jogos SET desenvolvedor = 'Overkill Software' WHERE nome = 'Free Fire';
+UPDATE jogos SET plataforma_adicional = 'Nintendo' WHERE nome = 'Phasmophobia';
+UPDATE jogos SET genero = 'RPG' WHERE genero = 'Ação';
+UPDATE jogos SET multi_plataforma = FALSE WHERE desenvolvedor != 'Bethesda Game Studio';
+UPDATE jogos SET nome = 'Jogo Corrigido' WHERE nome = 'Jogo Com Erro';
+UPDATE jogos SET ano_publicacao = YEAR(CURDATE()) WHERE ano_publicacao < 2015;
+UPDATE jogos SET descricao = 'O melhor jogo!!' WHERE nome = 'Roblox';
+UPDATE jogos SET desenvolvedor = 'Overkill Software' WHERE nome IN ('Hyper Scape', 'Clash Royale');
+UPDATE jogos SET ano_publicacao = ano_publicacao + 1;
+UPDATE jogos SET genero = 'Clássico' WHERE ano_publicacao < 2010;
+UPDATE Jogos SET plataforma_principal = 'PC' WHERE multi_plataforma IS TRUE;
+UPDATE Jogos SET desenvolvedor = 'Overkill Software' WHERE desenvolvedor LIKE '%X%';
+UPDATE Jogos SET multi_plataforma = TRUE WHERE genero IN ('Ação', 'Aventura');
+UPDATE Jogos SET data_lancamento_atraso = TRUE WHERE ano_publicacao < YEAR(CURDATE()) -1;
+UPDATE Jogos SET descricao=NULL WHERE descricao='Informação errada';
+UPDATE Jogos SET plataformas_adicionais='PC' WHERE multi_plataforma=TRUE
+UPDATE Jogos SET estado_desenvolvimento='Completo' WHERE estado_desenvolvimento='Em andamento';
