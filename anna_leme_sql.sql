@@ -1,3 +1,5 @@
+Anna Beatriz Leme Alves
+
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Slime Rancher', 2017, 'Aventura/Sandbox', 'Monomi Park', 'PC', FALSE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Fae Farm', 2023, 'Simulação/RPG', 'Phoenix Labs', 'PC', FALSE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Rising Storm 2: Vietnam',  2017, 'Tiro em primeira pessoa', 'Antimatter Games/Tripwire Interactive', 'PC', FALSE)
@@ -38,3 +40,85 @@ INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Crusader Kings III' , 2020, 'RPG/Estratégia' ,  'Paradox Interactive'  , 'Multi-plataforma', TRUE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('EVE Online'  'MMORPG/Espaço', 2003, 'CCP Games',  'Multi-plataforma', TRUE )
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('ARK: Survival Evolved' , 2015, 'Sobrevivência/Sandbox' ,  'Studio Wildcard' , 'Multi-plataforma', TRUE)
+
+Anna Beatriz Leme Alves (DELETE)
+DELETE FROM jogos WHERE nome = 'Payday';
+DELETE FROM jogos WHERE desenvolvedor = 'Overkill Software';
+DELETE FROM jogos WHERE ano_publicacao < 2010;
+DELETE FROM jogos WHERE genero LIKE '%Ação%' AND multi_plataforma=FALSE;
+DELETE FROM jogos WHERE ano_publicacao = 2010;
+DELETE FROM jogos WHERE genero = ‘Horror’;
+DELETE FROM jogos WHERE id = 5;
+DELETE FROM jogos WHERE nome = 'Phasmophobia' AND ano_publicacao = 2020;
+DELETE FROM jogos WHERE genero = 'Ação' AND ano_publicacao > 2010;
+DELETE FROM jogos WHERE desenvolvedor = 'Overkill Software' AND multi_plataforma = FALSE;
+DELETE FROM jogos WHERE ano_publicacao BETWEEN 2010 AND 2015;
+DELETE FROM jogos WHERE ano_publicacao IS NULL;
+
+Anna Beatriz Leme Alves (UPDATE)
+
+UPDATE jogos SET genero = 'Ação' WHERE nome = 'Phasmophobia';
+UPDATE jogos SET multi_plataforma = TRUE WHERE nome = 'Dig Dug';
+UPDATE jogos SET ano_publicacao = 2021 WHERE nome = 'BitLife';
+UPDATE jogos SET desenvolvedor = 'Overkill Software' WHERE nome = 'Free Fire';
+UPDATE jogos SET genero = 'RPG' WHERE genero = 'Ação';
+UPDATE jogos SET multi_plataforma = FALSE WHERE desenvolvedor != 'Bethesda Game Studio';
+UPDATE jogos SET ano_publicacao = YEAR(CURDATE()) WHERE ano_publicacao < 2015;
+UPDATE jogos SET desenvolvedor = 'Overkill Software' WHERE nome IN ('Hyper Scape', 'Clash Royale');
+UPDATE jogos SET ano_publicacao = ano_publicacao + 1;
+UPDATE jogos SET genero = 'Clássico' WHERE ano_publicacao < 2010;
+UPDATE Jogos SET desenvolvedor = 'Overkill Software' WHERE desenvolvedor LIKE '%X%';
+UPDATE Jogos SET multi_plataforma = TRUE WHERE genero IN ('Ação', 'Aventura');
+UPDATE jogos SET nome = ‘Minecraft’ WHERE id = 5;
+
+UPDATE jogos SET  ano_publicacao = 2010 WHERE ID = 5;
+UPDATE jogos genero = ‘Sandbox’ WHERE id =5;
+UPDATE jogos SET desenvolvedor = ‘Mojang Studios’ WHERE ID =5;
+UPDATE jogos SET multi_plataforma = true WHERE id =5;
+UPDATE jogos SET generos = ‘RPG’ WHERE nome LIKE ‘%ROBLOX%’;
+UPDATE jogos SET multi_plataforma = FALSE WHERE ID IN (2,6);
+UPDATE jogos SET multi_plataforma = TRUE WHERE ID  = 9;
+
+
+
+
+Anna Beatriz Leme Alves (SELECT)
+
+SELECT * FROM jogos WHERE genero = ‘Aventura’ 
+SELECT * FROM jogos WHERE nome LIKE 'A%';
+SELECT * FROM jogos WHERE ano_publicacao BETWEEN 2010 AND 2020;
+SELECT * FROM jogos WHERE desenvolvedor = 'Overkill Software';
+SELECT * FROM jogos WHERE multi_plataforma = 'Sim';
+SELECT * FROM jogos ORDER BY nome ASC;
+SELECT * FROM jogos WHERE ano_publicacao > 2010 AND genero = 'RPG';
+SELECT desenvolvedor, ano_publicacao FROM jogos ORDER BY ano_publicacao ASC;
+SELECT * FROM jogos ORDER BY ano_publicacao ASC LIMIT 3;
+SELECT nome, desenvolvedor FROM jogos ORDER BY desenvolvedor;
+SELECT * FROM jogos WHERE LENGTH(nome) = 6;
+SELECT nome, ano_publicacao FROM jogos;
+
+
+Anna Beatriz Leme Alves (Funções)
+
+SELECT COUNT(*) AS total_jogos FROM jogos;
+SELECT AVG(ano_publicacao) AS media_ano_publicacao FROM jogos;
+SELECT MAX(ano_publicacao) AS ano_mais_recente FROM jogos;
+SELECT MIN(ano_publicacao) AS ano_mais_antigo FROM jogos;
+SELECT SUM(ano_publicacao) AS soma_anos_publicacao FROM jogos;
+SELECT CONCAT(nome, ' - ', desenvolvedor) AS jogo_desenvolvedor FROM jogos;
+SELECT SUBSTRING(nome, 1, 5) AS primeiro_caractere FROM jogos;
+SELECT SUM(ano_publicacao) AS soma_anos_multi_plataforma 
+FROM jogos 
+WHERE multi_plataforma = TRUE;
+SELECT DISTINCT genero FROM jogos;
+SELECT desenvolvedor, GROUP_CONCAT(nome) AS jogos 
+FROM jogos 
+GROUP BY desenvolvedor 
+HAVING COUNT(DISTINCT nome) > 1;
+SELECT genero, 
+COUNT(*) * 100.0 / (SELECT COUNT(*) FROM jogos) AS porcentagem_jogos 
+FROM jogos 
+GROUP BY genero;
+SELECT COUNT(*) AS total_multiplataforma 
+FROM jogos 
+WHERE multi_plataforma = TRUE;
