@@ -1,3 +1,4 @@
+
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Free Fire', 2017, 'Battle Royale', 'Garena', FALSE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Fortnite', 2017, 'Battle Royale', 'Epic Games', TRUE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('The Legend of Zelda', 1986, 'Ação-aventura', 'Nintendo', FALSE)
@@ -102,3 +103,4 @@ SELECT ano_publicacao, COUNT(*) AS total_por_ano FROM jogos GROUP BY ano_publica
 SELECT AVG(ano_publicacao) AS media_acao FROM jogos WHERE genero = 'Ação';
 SELECT desenvolvedor, COUNT(*) AS total_por_desenvolvedor FROM jogos GROUP BY desenvolvedor;
 SELECT COUNT(*) AS total_terror FROM jogos WHERE genero = 'Terror';
+
