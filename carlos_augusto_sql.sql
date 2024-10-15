@@ -38,3 +38,67 @@ INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Ghost of Tsushima', 2020, 'Ação', 'Sucker Punch Productions', FALSE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Ghostrunner', 2020, 'Ação', 'One More Level', TRUE)
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Hitman 3', 2021, 'Ação', 'IO Interactive', TRUE)
+
+
+SELECT * FROM jogos WHERE ano_publicacao > 2015;
+SELECT * FROM jogos WHERE genero = 'Ação';
+SELECT * FROM jogos WHERE desenvolvedor = 'Nintendo';
+SELECT * FROM jogos ORDER BY ano_publicacao DESC LIMIT 5;
+SELECT * FROM jogos WHERE multi_plataforma = TRUE;
+SELECT * FROM jogos WHERE genero = 'Battle Royale' AND ano_publicacao = 2017;
+SELECT * FROM jogos WHERE genero LIKE 'FPS';
+SELECT * FROM jogos WHERE desenvolvedor = 'Ubisoft';
+SELECT * FROM jogos WHERE ano_publicacao = 2020;
+SELECT * FROM jogos WHERE genero = 'RPG';
+SELECT * FROM jogos WHERE genero = 'Corrida' AND multi_plataforma = TRUE;
+SELECT * FROM jogos WHERE ano_publicacao < 2000;
+
+
+UPDATE jogos SET ano_publicacao = 2018 WHERE nome = 'Free Fire';
+UPDATE jogos SET genero = 'FPS tático competitivo' WHERE nome = 'Valorant';
+UPDATE jogos SET desenvolvedor = 'Nintendo EPD' WHERE nome = 'The Legend of Zelda';
+UPDATE jogos SET multi_plataforma = TRUE WHERE nome = 'God of War Ragnarok';
+UPDATE jogos SET genero = 'Aventura' WHERE nome = 'Cuphead';
+UPDATE jogos SET ano_publicacao = 2021 WHERE nome = 'Fifa 21';
+UPDATE jogos SET desenvolvedor = 'Mojang Studios' WHERE nome = 'Minecraft';
+UPDATE jogos SET genero = 'Ação-aventura' WHERE nome = 'Ghost of Tsushima';
+UPDATE jogos SET ano_publicacao = 2018 WHERE nome = 'Hollow Knight';
+UPDATE jogos SET genero = 'FPS' WHERE nome = 'Overwatch';
+UPDATE jogos SET multi_plataforma = FALSE WHERE nome = 'Resident Evil Village';
+UPDATE jogos SET ano_publicacao = 2023 WHERE nome = 'Gran Turismo 7';
+UPDATE jogos SET desenvolvedor = 'Riot Games' WHERE nome = 'League of Legends';
+UPDATE jogos SET genero = 'Battle Royale' WHERE nome = 'Apex Legend';
+UPDATE jogos SET ano_publicacao = 2016 WHERE nome = 'Fallout 4';
+UPDATE jogos SET multi_plataforma = TRUE WHERE nome = 'Final Fantasy XV';
+UPDATE jogos SET genero = 'Simulação de vida' WHERE nome = 'The Sims 4';
+UPDATE jogos SET ano_publicacao = 2017 WHERE nome = 'Red Dead Redemption 2';
+UPDATE jogos SET desenvolvedor = 'Ubisoft Montreal' WHERE nome = 'Far Cry 5';
+UPDATE jogos SET genero = 'Ação e Aventura' WHERE nome = 'Ghostrunner';
+
+
+DELETE FROM jogos WHERE nome = 'Free Fire';
+DELETE FROM jogos WHERE nome = 'Fortnite';
+DELETE FROM jogos WHERE nome = 'The Last Guardian';
+DELETE FROM jogos WHERE nome = 'Among Us';
+DELETE FROM jogos WHERE nome = 'Guitar Hero';
+DELETE FROM jogos WHERE nome = 'Gran Turismo 7';
+DELETE FROM jogos WHERE nome = 'NBA 2K21';
+DELETE FROM jogos WHERE nome = 'Monster Hunter: World';
+DELETE FROM jogos WHERE nome = 'Just Dance 2021';
+DELETE FROM jogos WHERE nome = 'Payday 2';
+DELETE FROM jogos WHERE nome = 'Need For Speed';
+DELETE FROM jogos WHERE nome = 'Crash Bandicoot 4: Its About Time Standard Edition Activision';
+
+
+SELECT AVG(ano_publicacao) AS media_ano FROM jogos;
+SELECT MAX(ano_publicacao) AS ano_mais_recente FROM jogos;
+SELECT MIN(ano_publicacao) AS ano_mais_antigo FROM jogos;
+SELECT COUNT(*) AS total_jogos FROM jogos;
+SELECT genero, COUNT(*) AS total_por_genero FROM jogos GROUP BY genero;
+SELECT AVG(ano_publicacao) AS media_multiplataforma FROM jogos WHERE multi_plataforma = TRUE;
+SELECT MAX(ano_publicacao) AS max_ano_capcom FROM jogos WHERE desenvolvedor = 'Capcom';
+SELECT MIN(ano_publicacao) AS min_rpg FROM jogos WHERE genero = 'RPG';
+SELECT ano_publicacao, COUNT(*) AS total_por_ano FROM jogos GROUP BY ano_publicacao;
+SELECT AVG(ano_publicacao) AS media_acao FROM jogos WHERE genero = 'Ação';
+SELECT desenvolvedor, COUNT(*) AS total_por_desenvolvedor FROM jogos GROUP BY desenvolvedor;
+SELECT COUNT(*) AS total_terror FROM jogos WHERE genero = 'Terror';
