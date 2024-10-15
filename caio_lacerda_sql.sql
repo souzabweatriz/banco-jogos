@@ -1,4 +1,4 @@
-INSERT INTO jogos_antigos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma)
+INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma)
 VALUES 
 ('Super Mario Bros', 1985, 'Plataforma', 'Nintendo', TRUE),
 ('The Legend of Zelda: Tears of the Kingdom', 1986, 'Ação-aventura', 'Nintendo', TRUE),
