@@ -1,3 +1,4 @@
+
 INSERT INTO jogos_antigos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma)
 VALUES 
 ('Super Mario Bros', 1985, 'Plataforma', 'Nintendo', TRUE),
