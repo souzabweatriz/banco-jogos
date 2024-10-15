@@ -39,3 +39,83 @@ INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Capybara Limpeza Tycoon', 2024, 'Simulação', 'Dynabyte Studios', TRUE )
 INSERT INTO jogos (nome, ano_publicacao, genero, desenvolvedor, multi_plataforma) VALUES ('Bar do Bira', 2024, 'Simulação', 'ReyReno777', TRUE)
 
+SELECT * FROM jogos WHERE id = 50;
+SELECT * FROM jogos WHERE multi_plataforma = TRUE ORDER BY ano_publicacao;
+SELECT * FROM jogos WHERE genero = Survivor Horror;
+SELECT * FROM jogos WHERE ano_publicacao < 2020;
+SELECT * FROM jogos WHERE desenvolvedor = "Snow Moose Games";
+SELECT * FROM jogos WHERE genero = "Simulação";
+SELECT * FROM jogos WHERE ano_publicacao > 2008 
+SELECT * FROM jogos WHERE desenvolvedor = "Capcom"
+SELECT * FROM jogos ORDER BY ano_publicacao DESC LIMIT 5;
+SELECT * FROM jogos WHERE ano_publicacao >= 2010;
+SELECT * FROM jogos WHERE genero = "Interpretação de papéis simulador de avatar" ORDER BY ano_publicacao;
+SELECT * FROM jogos WHERE id = 90;
+
+UPDATE jogos SET multi_plataforma FALSE WHERE ano_publicacao = 2020;
+UPDATE jogos SET nome = ‘Resident Evil’ WHERE id = -00;
+UPDATE jogos SET ano_publicacao = 2019 nome = ‘Brawl Stars’;
+UPDATE jogos SET desenvolvedor = ‘não identificado’ WHERE nome LIKE ‘C%’;
+UPDATE jogos SET genero = ‘Survivor Horror’ WHERE nome = ‘Dress to Impress;
+UPDATE jogos SET multi_plataforma = TRUE WHERE ano_publicacao = 2002 ;
+UPDATE jogos SET multi_plataforma =TRUE WHERE desenvolvedor = ‘Outifit 7’;
+UPDATE jogos SET ano publicacao = 2020 WHERE nome = ‘Dead Silence’;
+UPDATE jogos SET nome = ‘My Talking Angela’ WHERE id = 00;
+UPDATE jogos SET nome = ‘Jogo Inexistente’ WHERE id = 00;
+UPDATE jogos SET genero = 'Aventura' WHERE nome = 'Bus Simulator';
+UPDATE jogos SET multi_plataforma = TRUE WHERE nome = 'Minecraft';
+UPDATE jogos SET ano_publicacao = 2022 WHERE nome = 'Among Us';
+UPDATE jogos SET nome = 'The Sims 4' WHERE id = 00;
+UPDATE jogos SET multi_plataforma = TRUE WHERE desenvolvedor = 'Shiro Games';
+UPDATE jogos SET genero = 'Competição' WHERE nome = 'UNO';
+UPDATE jogos SET nome = 'Minecraft Luckyblock' WHERE id = 00;
+UPDATE jogos SET desenvolvedor = 'Capcom' WHERE nome = 'Town of Salem';
+UPDATE jogos SET nome = 'The Sims 90' WHERE id = 102;
+UPDATE jogos SET genero = 'Corrida' WHERE nome = 'Spellbreak';
+
+
+FUNÇÕES DO SQL (Souza)
+
+SELECT COUNT (*) FROM jogos
+SELECT COUNT(*) AS multiplataforma_count FROM jogos 
+WHERE multi_plataforma = TRUE;
+SELECT AVG(ano_publicacao) 
+FROM jogos;
+SELECT nome, UPPER(nome) 
+AS nome_maiusculo
+FROM jogos;
+SELECT genero
+COUNT(*) AS total_jogos FROM jogos 
+GROUP BY genero;
+SELECT SUM(ano_publicacao)
+AS total_anos_publicacao
+FROM jogos;
+SELECT UPPER(nome) 
+AS nome_maiusculo 
+FROM jogos;
+SELECT nome, EXTRACT(YEAR FROM ano_publicacao) AS ano FROM jogos;
+SELECT LOWER (desenvolvedor) AS desenvolvedor_minusculo
+FROM jogos;
+SELECT nome, desenvolvedor, CONCAT(nome, ‘-’, desenvolvedor) AS nome_desenvolvedor
+FROM jogos;
+SELECT desenvolvedor, LENGHT(desenvolvedor) AS tamanho_desenvolvedor
+FROM jogos;
+SELECT COUNT(*) AS total_jogos
+FROM jogos
+            WHERE genero = 'Ação';
+
+
+DELETE (Souza)
+
+DELETE FROM jogos WHERE id = –;
+DELETE FROM jogos WHERE genero = ‘Survivor Horror’;
+DELETE FROM jogos WHERE ano_lancamento > 2019;
+DELETE FROM jogos WHERE desenvolvedor = ‘Capcom’;
+DELETE FROM jogos WHERE multi_plataforma = FALSE;
+DELETE FROM jogos WHERE nome LIKE ‘B%’;
+DELETE FROM jogos WHERE ano_lancamento BETWEEN 2000 AND 2009;
+DELETE FROM jogos WHERE ano_lancamento = (SELECT MIN (ano_lancamento) FROM jogos)
+DELETE FROM jogos WHERE nome = ‘Resident Evil 4’;
+DELETE FROM jogos WHERE genero NOT IN (‘Interpretação de papéis e simulador de avatar’);
+DELETE FROM jogos WHERE ano_lancamento < 2008;
+DELETE FROM jogos WHERE nome = ‘The forest’;
